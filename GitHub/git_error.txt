@@ -1,0 +1,23 @@
+# 2020.07.28
+# Learn to Python
+
+
+#error_1
+fatal: pathspec '*' did not match any files
+
+[ex]
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/ltp (master)
+$ git add *
+fatal: pathspec '*' did not match any files
+
+[sol]
+* fatal: pathspec '*' did not match any files
+: 파일명 리네임으로 git commit 시 해당 에러가 발생하였을 때 did not match any file(s) known to git.
+1. 변경 전 파일이름을 git에서 un-add 한다.
+> git resrt HEAN oldFileName.file
+2. 새로 변경된 파일이름을 git에 add 한다.
+> git add newFileName.file
+3. 다시 커밋한다
+
+[URL]
+https://blog.naver.com/gihyunkwak/220815234172)
