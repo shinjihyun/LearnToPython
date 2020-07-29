@@ -1,0 +1,260 @@
+# 2020.07.28
+# Learn to Python
+
+
+* GitHub Guide URL : https://guides.github.com/
+
+* git init setting
+$ git config --global user.name "shinjihyun"
+$ git config --global user.email skswlgusdldi@naver.com
+$ git clone https://github.com/shinjihyun/LearnToPython.git
+
+
+$ mkdir ltp   #폴더생성
+$ cd ltp #폴더이동
+$ git init
+$ git remote add origin https://github.com/shinjihyun/learn_to_python.git
+$ git push -u origin master
+
+* 인덱스에 파일 추가 > stage (git add)
+$ ls					#해당 경로에 파일 확인
+20200728_git_error.txt  20200728_git_init_setting.txt
+
+$ git status				#상태 확인
+On branch LearnToPython
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+$ git add 20200728_git_error.txt		#"20200728_git_error.txt" 파일을 인덱스에 스테이지 함
+				
+$ git status				#상태 확인
+On branch LearnToPython
+
+No commits yet
+
+Changes to be committed:			#"20200728_git_error.txt" 파일이 인덱스(Staging Area)에 포함된 것을 확인
+  (use "git rm --cached <file>..." to unstage)	#'Changes to be committed' 목록에 있는 파일은 Staged 상태라는 것을 의미
+        new file:   20200728_git_error.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        20200728_git_init_setting.txt
+
+$ git rm --cached 20200728_git_error.txt	#인덱스에 추가된 파일을 제외시키려면 'git rm --cached' 명령을 사용
+rm 'ltp_20200728/20200728_git_error.txt'
+
+$ git status				#상태 확인
+On branch LearnToPython
+
+No commits yet
+
+Untracked files:				#인덱스(Staging Area)에 포함되었던 "20200728_git_error.txt" 파일이 제외된 것을 확인
+  (use "git add <file>..." to include in what will be committed)
+        ./
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ git add .				#추가하려는 파일이 많을 경우 git add . 명령을 이용하면 해당 폴더의 Untracked Files 모두를 한번에 stage 하는 것이 가능.
+					
+$ git status
+On branch LearnToPython
+
+No commits yet
+
+Changes to be committed:			#파일 2개(20200728_git_error.txt, 20200728_git_init_setting.txt) 모두 인덱스(Staging Area)에 포함된 것을 확인
+
+  (use "git rm --cached <file>..." to unstage)
+        new file:   20200728_git_error.txt
+        new file:   20200728_git_init_setting.txt
+
+$ git commit -m "first commit"		#'git commit -m "커밋코멘트" 명령을 실행하여 파일 2개를 HEAD에 적용
+[LearnToPython (root-commit) 99407c3] first commit
+ 2 files changed, 101 insertions(+)
+ create mode 100644 ltp_20200728/20200728_git_error.txt
+ create mode 100644 ltp_20200728/20200728_git_init_setting.txt
+
+$ git log					#commit 이후 'git log' 명령을 실행해 보면 commit history 가 정상적으로 남은 것을 볼수 있음
+commit 99407c3f2199707c8ab9d5d4920afd28fa902de5 (HEAD -> LearnToPython)
+Author: shinjihyun <skswlgusdldi@naver.com>	#author 영역의 이름과 이메일 주소는 git config 명령을 통해 세팅했던 user.name과 user.email 값이 표기
+Date:   Tue Jul 28 17:14:51 2020 +0900
+
+    first commit				# commit 시 -m옵션을 통해 남겼던 코멘트도 보여집니다.
+					# git commit -a 옵션을 사용하면 스테이징 절차(add)를 생략하고 바로 add와 commit을 동시에 하는 것도 가능.
+
+
+
+
+# Github에 코드 올리기 전 세팅
+jihyu@DESKTOP-ILOKOQI MINGW64 ~
+$ git config --global user.name "shinjihyun"
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~
+$ git config --global user.email skswlgusdldi@naver.com
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~
+$ git clone https://github.com/shinjihyun/LearnToPython.git
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~
+$ cd LearnToPython
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython (master)
+$ git branch
+* master
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython (master)
+$ git checkout -b jihyun
+Switched to a new branch 'jihyun'
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython (jihyun)
+$ ls
+GitHub/  README.md
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython (jihyun)
+$ cd GitHub
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython/GitHub (jihyun)
+$ ls
+git_error.txt  git_setting_guide.txt
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython/GitHub (jihyun)
+$ git add .
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython/GitHub (jihyun)
+$ git status
+On branch jihyun
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   git_error.txt
+        new file:   git_setting_guide.txt
+
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython/GitHub (jihyun)
+$ git commit -m "upload git_guide"
+[jihyun 5de2c4b] upload git_guide
+ 2 files changed, 144 insertions(+)
+ create mode 100644 GitHub/git_error.txt
+ create mode 100644 GitHub/git_setting_guide.txt
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython/GitHub (jihyun)
+$ git status
+On branch jihyun
+nothing to commit, working tree clean
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython/GitHub (jihyun)
+$ git push
+fatal: The current branch jihyun has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin jihyun
+
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython/GitHub (jihyun)
+$ git push jihyun
+fatal: 'jihyun' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython/GitHub (jihyun)
+$ git push --set-upstream origin jihyun
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 2.12 KiB | 1.06 MiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'jihyun' on GitHub by visiting:
+remote:      https://github.com/shinjihyun/LearnToPython/pull/new/jihyun
+remote:
+To https://github.com/shinjihyun/LearnToPython.git
+ * [new branch]      jihyun -> jihyun
+Branch 'jihyun' set up to track remote branch 'jihyun' from 'origin'.
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython/GitHub (jihyun)
+$ git push jihyun
+fatal: 'jihyun' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython/GitHub (jihyun)
+$ git status
+On branch jihyun
+Your branch is up to date with 'origin/jihyun'.
+
+nothing to commit, working tree clean
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython/GitHub (jihyun)
+$ git add .git 
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython/GitHub (jihyun)
+$ git status
+On branch jihyun
+Your branch is up to date with 'origin/jihyun'.
+
+nothing to commit, working tree clean
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython/GitHub (jihyun)
+$ git status
+On branch jihyun
+Your branch is up to date with 'origin/jihyun'.
+
+nothing to commit, working tree clean
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython/GitHub (jihyun)
+$ cd ..
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython (jihyun)
+$ git status
+On branch jihyun
+Your branch is up to date with 'origin/jihyun'.
+
+nothing to commit, working tree clean
+
+jihyu@DESKTOP-ILOKOQI MINGW64 ~/LearnToPython (jihyun)
+$
+
+
+
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
+$ 
