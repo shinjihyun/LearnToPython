@@ -1,0 +1,34 @@
+<<<<<<< HEAD
+# git fetch method
+
+$ cd LearnToPython
+
+$ 
+
+$ git fetch origin master
+From https://github.com/shinjihyun/LearnToPython
+ * branch            master     -> FETCH_HEAD
+
+$ git status
+=======
+# git fetch impormation
+# github에 소스 올리기 전 git 처음 실행하면 해야할 일
+# repository LearnToPython source code Download(Fetch)
+
+
+
+$ cd LearnToPython
+
+$ git fetch origin
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 7 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (7/7), 2.53 KiB | 112.00 KiB/s, done.
+From https://github.com/shinjihyun/LearnToPython
+   21f683c..8695bc8  master     -> origin/master
+   15320a3..2add258  jihyun     -> origin/jihyun
+
+$ git status
+
+>>>>>>> master

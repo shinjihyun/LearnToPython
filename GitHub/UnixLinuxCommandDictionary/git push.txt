@@ -1,0 +1,23 @@
+# git push
+
+$ git push origin master
+
+- git push origin master 의 명령어의 의미는 아래와 같습니다.
+git push => push 명령어를 사용합니다.
+origin => git에서 origin이라고 저장된 리모트 저장소에
+master => 로컬에 있는 master 브랜치를 푸시합니다.
+
+master라는 local repository 에 origin 이라는 remote repository 에 push를 해라 
+push를 하라는 의미는 remote sw 관리 ( repository ) 서버에 Data를 update(갱신)하라는 의미입니다. 
+
+​참고로 해당 저장소에 있는 리모트 저장소에 대한 정보를 알기 위해서는 아래 명령어를 사용하시면 됩니다.
+$ git remote -v
+참고로 원격 저장소를 처음 clone 했을 경우 기본으로 해당 주소가 origin에 들어가 있으니 참고하시기 바랍니다.
+
+그래서 develop 브랜치를 원격 코드로 push하기를 원하시면 아래 명령어를 사용하시면 됩니다.
+
+$ git push origin jihyun
+
+참고로 이렇게 브랜치를 나누어서 작업을 했더라도 나중에 브랜치를 합치는 경우에는 결국 충돌이 발생하기 때문에 merge 명령어를 사용하고 직접 conflict된 내용을 수정해야 합니다.
+
+> 참고 : 네이버 지식인 https://kin.naver.com/qna/detail.nhn?d1id=1&dirId=104&docId=331129633&qb=Z2l0IHJlbW90ZSBhZGQgb3JpZ2luLXB1c2g=&enc=utf8&section=kin&rank=1&search_sort=0&spq=0

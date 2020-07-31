@@ -1,0 +1,20 @@
+#git pull
+
+<이렇게 써요>
+git pull
+git pull 저장소_주소 branch
+
+git pull : 인수나 옵션 없이 실행하면 현재 로컬에 등록된 추적 중인 브랜치에 해당하는 소스 모두를 가져온다.
+git pull 저장소_주소 branch : 저장소_주소에 등록된 최신 소스를 가져와 지정한 브랜치에 저장한다.
+
+--no-commit : 커밋 없이 소스를 가져와 로컬에 저장한다.
+
+<설명 및 예제>
+git pull은 git fetch와 git merge가 하는 일을 한 번에 수행한다.
+$ git fetch origin master
+From https://github.com/shinjihyun/LearnToPython
+ * branch            master     -> FETCH_HEAD
+
+만약 pull 사용 시 충돌이 발생하면 git merge를 참고하여 해결하자.
+
+참고 : 네이버 지식백과 https://terms.naver.com/entry.nhn?docId=4125978&cid=59321&categoryId=59321
