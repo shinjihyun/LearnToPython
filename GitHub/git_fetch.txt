@@ -1,0 +1,11 @@
+# git fetch method
+
+$ cd LearnToPython
+
+$ 
+
+$ git fetch origin master
+From https://github.com/shinjihyun/LearnToPython
+ * branch            master     -> FETCH_HEAD
+
+$ git status
